@@ -9,23 +9,9 @@ body {
   background-color: #61122f;
   font-family: 'Oxygen', sans-serif;
   width:100%;
-  overflow: auto;
+  
 }
-h1 {
-  margin-bottom: 15px;
-  text-align: center;
-  font:Helvetica;
-  font-size: 175%
-  font-color: purple;
-
-
-}
-
-h2{
-
-	text-align: center;
-
-}
+/**Header **/
 
 #header-nav {
  /* background-color: #f6b319;*/
@@ -77,6 +63,29 @@ h2{
   clear: both;
   margin-top: -30px;
 }
+
+.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
+  border: 1px solid #61122f;
+}
+
+/* end of header*/
+
+/* Home page */
+.container .jumbotron h1 {
+  margin-bottom: 15px;
+  text-align: center;
+  font:Helvetica;
+  font-size: 175%
+  font-color: purple;
+
+
+}
+
+.container .jumbotron h2{
+
+	text-align: center;
+
+}
 .container .jumbotron {
   box-shadow: 0 0 50px #3F0C1F;
   padding: 20px;
@@ -92,8 +101,7 @@ h2{
 
 	font-color:blue;
 	background-color:#611200;
-	overflow: hidden;
-	height: 1000px;
+	height: 1200px;
 }
 
 #collapsable-nav a { /* Collapsed nav menu text */
@@ -106,14 +114,15 @@ h2{
     font-size: 1em;
     margin-right: 5px;
   }
-.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
-  border: 1px solid #61122f;
-}
+
+/* end of page */
 
 @media (min-width: 768px) {
   #collapsable-nav a{
 
   	display:none;
+
   
   }
+  .navbar-fixed-top { position:relative; }
 }
