@@ -96,18 +96,27 @@ function buildAndShowHomeHTML (categories) {
   // Load home snippet page
   $ajaxUtils.sendGetRequest(
     homeHtmlUrl,
-    function (homeHtml) {
+    function (homeHtmlUrl) {
 
-        var CategoryShortName = chooseRandomCategory(categories);
+        var CategoryShortName = chooseRandomCategory(categories).short_name;
        
-        console.log("CC"+ CategoryShortName)
-        console.log(CategoryShortName);
-        var shortname = "" + CategoryShortName;
-        console.log("shortname " + shortname);
-        var homeHtmlToInsertIntoMainPage = 
-          insertProperty(homeHtmlUrl, "short_name", shortname);    
-          insertHtml("#main-content", homeHtml);
-          console.log(homeHtml);
+        
+        // console.log(CategoryShortName);
+        // var shortname = "" + CategoryShortName;
+        console.log("shortname " + CategoryShortName);
+        // var homeHtmlToInsertIntoMainPage = 
+        //   insertProperty(homeHtmlUrl, "randomCategoryShortName", shortname);    
+        //   insertHtml("#main-content", homeHtml);
+        //   console.log(homeHtml);
+        $ajaxUtils.sendGetRequest(
+        categoryHtml,
+        function (homeHtml) {
+          var homeHtmlToInsertIntoMainPage =
+            insertProperty(homeHtmlUrl, "randomCategoryShortName", "" + CategoryShortName);
+          console.log("Html snippet" + homeHtmlToInsertIntoMainPage)
+          insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
+        },
+        false);
             },
           
 
